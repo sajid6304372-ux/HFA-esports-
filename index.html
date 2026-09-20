@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HFA Esports | Competitive Gaming & Tournaments</title>
+
+  <meta name="description"
+        content="HFA Esports - Professional esports tournaments, competitive gaming and live events from Hyderabad, Telangana.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #05070b;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================
+       GLOBAL
+    ========================= */
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    .blue {
+      color: #3aa7ff;
+    }
+
+    .muted {
+      color: #8993a3;
+    }
+
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    .section-subtitle {
+      color: #8d96a6;
+      max-width: 650px;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .eyebrow {
+      color: #3aa7ff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(5, 7, 11, 0.75);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(58,167,255,0.7);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 50% 30%, #1d78c8, transparent 55%),
+        #080d15;
+      box-shadow: 0 0 30px rgba(58,167,255,0.18);
+      font-size: 13px;
+    }
+
+    .logo-text span {
+      display: block;
+      font-size: 10px;
+      color: #6d7787;
+      letter-spacing: 3px;
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #aeb7c6;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-btn {
+      padding: 12px 18px;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #05070b !important;
+      font-weight: 900 !important;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 150px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 75% 35%, rgba(22,110,190,.25), transparent 30%),
+        radial-gradient(circle at 15% 75%, rgba(22,76,130,.13), transparent 28%),
+        linear-gradient(180deg, #05070b 0%, #070a10 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .15;
+      background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 70px 70px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 8vw, 105px);
+      line-height: .88;
+      letter-spacing: -6px;
+      font-weight: 950;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 .outline {
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,.45);
+    }
+
+    .hero-description {
+      max-width: 580px;
+      color: #9ca6b6;
+      line-height: 1.8;
+      font-size: 17px;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 900;
+      transition: .25s;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .btn-primary {
+      background: #168cff;
+      box-shadow: 0 12px 40px rgba(22,140,255,.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 50px rgba(22,140,255,.38);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.035);
+      color: #dbe2ec;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,.08);
+    }
+
+    /* Hero visual */
+
+    .hero-visual {
+      position: relative;
+      min-height: 510px;
+    }
+
+    .arena-card {
+      position: absolute;
+      inset: 25px 0 25px 35px;
+      border-radius: 25px;
+      border: 1px solid rgba(255,255,255,.1);
+      background:
+        radial-gradient(circle at 60% 20%, rgba(43,155,255,.22), transparent 35%),
+        linear-gradient(145deg, #111923, #070a0f 70%);
+      overflow: hidden;
+      box-shadow: 0 35px 100px rgba(0,0,0,.55);
+    }
+
+    .arena-card::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      border: 1px solid rgba(58,167,255,.25);
+      right: -90px;
+      top: -100px;
+      box-shadow:
+        0 0 80px rgba(58,167,255,.12),
+        inset 0 0 60px rgba(58,167,255,.06);
+    }
+
+    .arena-lines {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, transparent 45%, rgba(58,167,255,.13) 46%, transparent 47%),
+        linear-gradient(60deg, transparent 55%, rgba(255,255,255,.05) 56%, transparent 57%);
+    }
+
+    .arena-content {
+      position: absolute;
+      inset: 0;
+      padding: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .arena-top {
+      display: flex;
+      justify-content: space-between;
+      color: #7d8797;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .arena-center {
+      text-align: center;
+    }
+
+    .arena-center .big-logo {
+      font-size: 75px;
+      font-weight: 950;
+      letter-spacing: -5px;
+      text-shadow: 0 0 45px rgba(58,167,255,.35);
+    }
+
+    .arena-center p {
+      color: #718095;
+      letter-spacing: 5px;
+      font-size: 10px;
+      margin-top: 8px;
+    }
+
+    .arena-bottom {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 20px;
+      color: #8290a2;
+      font-size: 11px;
+    }
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats {
+      border-top: 1px solid rgba(255,255,255,.07);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      background: #080b11;
+      padding: 35px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+    }
+
+    .stat {
+      text-align: center;
+      padding: 10px 20px;
+      border-right: 1px solid rgba(255,255,255,.08);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 32px;
+      margin-bottom: 7px;
+    }
+
+    .stat span {
+      color: #707b8c;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       TOURNAMENTS
+    ========================= */
+
+    .tournament-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+      margin-top: 55px;
+    }
+
+    .tournament {
+      min-height: 390px;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 18px;
+      background: linear-gradient(145deg,#0d131c,#080a0e);
+      overflow: hidden;
+      position: relative;
+      transition: .3s;
+    }
+
+    .tournament:hover {
+      transform: translateY(-7px);
+      border-color: rgba(58,167,255,.45);
+    }
+
+    .tournament-art {
+      height: 205px;
+      position: relative;
+      background:
+        radial-gradient(circle at 75% 30%, rgba(30,145,255,.35), transparent 30%),
+        linear-gradient(135deg,#121b28,#07090d);
+    }
+
+    .tournament-art::after {
+      content: "HFA";
+      position: absolute;
+      right: 20px;
+      bottom: -5px;
+      font-size: 90px;
+      font-weight: 950;
+      color: rgba(255,255,255,.035);
+    }
+
+    .live {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: #ffffff;
+      color: #05070b;
+      padding: 7px 10px;
+      border-radius: 5px;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .tournament-body {
+      padding: 25px;
+    }
+
+    .tournament-body h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .tournament-body p {
+      color: #788394;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .tournament-meta {
+      display: flex;
+      justify-content: space-between;
+      color: #9ba5b4;
+      font-size: 11px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding-top: 17px;
+    }
+
+    /* =========================
+       GAMES
+    ========================= */
+
+    .games-section {
+      background: #070a0f;
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+      margin-top: 50px;
+    }
+
+    .game {
+      height: 300px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background:
+        linear-gradient(to top, #06080c, transparent),
+        radial-gradient(circle at 50% 25%, rgba(37,132,220,.2), transparent 35%),
+        #0b1017;
+      display: flex;
+      align-items: flex-end;
+      padding: 25px;
+      transition: .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .game:hover {
+      transform: translateY(-5px);
+      border-color: rgba(58,167,255,.4);
+    }
+
+    .game-number {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: rgba(255,255,255,.18);
+      font-size: 38px;
+      font-weight: 900;
+    }
+
+    .game h3 {
+      font-size: 25px;
+    }
+
+    .game small {
+      color: #748092;
+      display: block;
+      margin-top: 6px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-panel {
+      min-height: 450px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.08);
+      background:
+        radial-gradient(circle at 40% 35%, rgba(30,130,220,.16), transparent 35%),
+        #090d13;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-panel .circle {
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgba(58,167,255,.3);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 90px rgba(58,167,255,.12);
+    }
+
+    .about-panel strong {
+      font-size: 70px;
+      letter-spacing: -5px;
+    }
+
+    .feature-list {
+      margin-top: 35px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .feature {
+      display: flex;
+      gap: 18px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .feature-icon {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      border-radius: 10px;
+      background: rgba(58,167,255,.1);
+      border: 1px solid rgba(58,167,255,.18);
+      display: grid;
+      place-items: center;
+      color: #3aa7ff;
+      font-weight: 900;
+    }
+
+    .feature h4 {
+      margin-bottom: 6px;
+    }
+
+    .feature p {
+      color: #7d8796;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      padding: 100px 0;
+    }
+
+    .cta-box {
+      min-height: 360px;
+      border-radius: 24px;
+      border: 1px solid rgba(58,167,255,.22);
+      background:
+        radial-gradient(circle at 80% 50%, rgba(26,139,255,.22), transparent 30%),
+        linear-gradient(135deg,#0d1520,#080a0e);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 65px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cta-box::after {
+      content: "HFA";
+      position: absolute;
+      right: -25px;
+      bottom: -60px;
+      font-size: 250px;
+      font-weight: 950;
+      color: rgba(255,255,255,.025);
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta h2 {
+      font-size: clamp(38px,5vw,68px);
+      line-height: .95;
+      letter-spacing: -3px;
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.07);
+      background: #040509;
+      padding: 55px 0 30px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      padding-bottom: 45px;
+    }
+
+    .footer-brand p {
+      color: #6e7888;
+      max-width: 350px;
+      line-height: 1.7;
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 60px;
+    }
+
+    .footer-links h4 {
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      color: #ffffff;
+    }
+
+    .footer-links a {
+      display: block;
+      color: #727d8d;
+      font-size: 13px;
+      margin-bottom: 11px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding-top: 25px;
+      color: #596373;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 125px;
+      }
+
+      .hero h1 {
+        letter-spacing: -4px;
+      }
+
+      .hero-visual {
+        min-height: 400px;
+      }
+
+      .arena-card {
+        inset: 10px 0 10px 0;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2,1fr);
+        gap: 25px 0;
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .tournament-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .games-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .cta-box {
+        padding: 40px 25px;
+        display: block;
+      }
+
+      .cta .btn {
+        margin-top: 20px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      section {
+        padding: 75px 0;
+      }
+
+      .hero h1 {
+        font-size: 57px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 340px;
+      }
+
+      .arena-content {
+        padding: 25px;
+      }
+
+      .arena-center .big-logo {
+        font-size: 55px;
+      }
+
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .game {
+        height: 220px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <header>
+    <div class="container nav">
+
+      <a href="#" class="logo">
+        <div class="logo-mark">HFA</div>
+
+        <div class="logo-text">
+          HFA ESPORTS
+          <span>COMPETITIVE GAMING</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#tournaments">Tournaments</a>
+        <a href="#games">Games</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#tournaments" class="nav-btn">BOOK NOW</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            Hyderabad • Telangana • India
+          </div>
+
+          <h1>
+            PLAY.<br>
+            <span class="outline">COMPETE.</span><br>
+            DOMINATE.
+          </h1>
+
+          <p class="hero-description">
+            HFA Esports is building a professional competitive gaming
+            ecosystem from Hyderabad — tournaments, LAN events,
+            custom rooms and the next generation of esports competition.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#tournaments" class="btn btn-primary">
+              EXPLORE TOURNAMENTS
+            </a>
+
+            <a href="#about" class="btn btn-secondary">
+              DISCOVER HFA
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+          <div class="arena-card">
+
+            <div class="arena-lines"></div>
+
+            <div class="arena-content">
+
+              <div class="arena-top">
+                <span>HFA / 001</span>
+                <span>ESPORTS ORGANISATION</span>
+              </div>
+
+              <div class="arena-center">
+                <div class="big-logo">HFA</div>
+                <p>HYD FIRE ARENA ESPORTS</p>
+              </div>
+
+              <div class="arena-bottom">
+                <span>HYDERABAD</span>
+                <span>EST. 2026</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         STATS
+    ========================== -->
+
+    <section class="stats">
+
+      <div class="container stats-grid">
+
+        <div class="stat">
+          <strong>01</strong>
+          <span>Esports Organisation</span>
+        </div>
+
+        <div class="stat">
+          <strong>24/7</strong>
+          <span>Competitive Community</span>
+        </div>
+
+        <div class="stat">
+          <strong>HYD</strong>
+          <span>Home Base</span>
+        </div>
+
+        <div class="stat">
+          <strong>∞</strong>
+          <span>Future Games</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TOURNAMENTS
+    ========================== -->
+
+    <section id="tournaments">
+
+      <div class="container">
+
+        <div class="eyebrow">LIVE COMPETITION</div>
+
+        <h2 class="section-title">
+          Upcoming <span class="blue">Tournaments.</span>
+        </h2>
+
+        <p class="section-subtitle">
+          Discover upcoming HFA Esports competitions and secure
+          your squad's place in the arena.
+        </p>
+
+
+        <div class="tournament-grid">
+
+          <article class="tournament">
+
+            <div class="tournament-art">
+              <span class="live">REGISTRATION OPEN</span>
+            </div>
+
+            <div class="tournament-body">
+
+              <h3>Arena Campus Cup 2026</h3>
+
+              <p>
+                A major competitive campus esports event
+                hosted by HFA Esports.
+              </p>
+
+              <div class="tournament-meta">
+                <span>NOV 01, 2026</span>
+                <span>₹500 / SQUAD</span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="tournament">
+
+            <div class="tournament-art">
+              <span class="live">COMING SOON</span>
+            </div>
+
+            <div class="tournament-body">
+
+              <h3>HFA Monthly Series</h3>
+
+              <p>
+                Monthly competitive tournaments designed
+                for the growing HFA community.
+              </p>
+
+              <div class="tournament-meta">
+                <span>MONTHLY</span>
+                <span>OPEN SOON</span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="tournament">
+
+            <div class="tournament-art">
+              <span class="live">COMING SOON</span>
+            </div>
+
+            <div class="tournament-body">
+
+              <h3>HFA Multi-Game League</h3>
+
+              <p>
+                A future competitive league bringing
+                multiple games into one ecosystem.
+              </p>
+
+              <div class="tournament-meta">
+                <span>MULTI-GAME</span>
+                <span>COMING SOON</span>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         GAMES
+    ========================== -->
+
+    <section id="games" class="games-section">
+
+      <div class="container">
+
+        <div class="eyebrow">COMPETITIVE TITLES</div>
+
+        <h2 class="section-title">
+          Games We <span class="blue">Play.</span>
+        </h2>
+
+        <p class="section-subtitle">
+          HFA is building a multi-game esports ecosystem.
+          More competitive titles will be added as the organisation grows.
+        </p>
+
+
+        <div class="games-grid">
+
+          <div class="game">
+            <span class="game-number">01</span>
+            <div>
+              <h3>FREE FIRE</h3>
+              <small>Competitive Mobile Esports</small>
+            </div>
+          </div>
+
+          <div class="game">
+            <span class="game-number">02</span>
+            <div>
+              <h3>BGMI</h3>
+              <small>Coming to HFA Ecosystem</small>
+            </div>
+          </div>
+
+          <div class="game">
+            <span class="game-number">03</span>
+            <div>
+              <h3>MORE</h3>
+              <small>Future Competitive Titles</small>
+            </div>
+          </div>
+
+          <div class="game">
+            <span class="game-number">04</span>
+            <div>
+              <h3>HFA LEAGUE</h3>
+              <small>Our Competitive Platform</small>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+      <div class="container about-grid">
+
+        <div class="about-panel">
+
+          <div class="circle">
+            <strong>HFA</strong>
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="eyebrow">THE ORGANISATION</div>
+
+          <h2 class="section-title">
+            More Than<br>
+            <span class="blue">A Tournament.</span>
+          </h2>
+
+          <p class="section-subtitle">
+            HFA Esports is focused on creating a professional
+            competitive gaming environment where players,
+            teams, organisers, creators and audiences can grow
+            together.
+          </p>
+
+
+          <div class="feature-list">
+
+            <div class="feature">
+
+              <div class="feature-icon">01</div>
+
+              <div>
+                <h4>Professional Events</h4>
+
+                <p>
+                  Structured tournaments with organised
+                  match operations and competitive standards.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="feature">
+
+              <div class="feature-icon">02</div>
+
+              <div>
+                <h4>Competitive Community</h4>
+
+                <p>
+                  Building a strong player and team community
+                  from Hyderabad and beyond.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="feature">
+
+              <div class="feature-icon">03</div>
+
+              <div>
+                <h4>Future Ecosystem</h4>
+
+                <p>
+                  Expanding towards multiple games, leagues,
+                  events and professional esports experiences.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section id="contact" class="cta">
+
+      <div class="container">
+
+        <div class="cta-box">
+
+          <div class="cta-content">
+
+            <div class="eyebrow">
+              JOIN THE ARENA
+            </div>
+
+            <h2>
+              READY TO<br>
+              <span class="blue">COMPETE?</span>
+            </h2>
+
+            <p class="section-subtitle">
+              Follow HFA Esports for upcoming tournaments,
+              registrations and competitive gaming updates.
+            </p>
+
+            <a
+              href="mailto:hydfirearena@gmail.com"
+              class="btn btn-primary"
+            >
+              CONTACT HFA ESPORTS
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+
+          <div class="logo">
+            <div class="logo-mark">HFA</div>
+
+            <div class="logo-text">
+              HFA ESPORTS
+              <span>COMPETITIVE GAMING</span>
+            </div>
+          </div>
+
+          <p>
+            Professional esports tournaments,
+            competitive gaming and community experiences
+            from Hyderabad, Telangana.
+          </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <div>
+            <h4>EXPLORE</h4>
+            <a href="#tournaments">Tournaments</a>
+            <a href="#games">Games</a>
+            <a href="#about">About HFA</a>
+          </div>
+
+          <div>
+            <h4>CONNECT</h4>
+            <a href="mailto:hydfirearena@gmail.com">Email</a>
+            <a href="https://instagram.com/hfa_esports" target="_blank">
+              Instagram
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 HFA Esports. All rights reserved.
+        </span>
+
+        <span>
+          Hyderabad • Telangana • India
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
